@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/custom_app_bar.dart';
+import '../screens/order_screen.dart';
+import '../screens/underconstruction_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -9,7 +10,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int bottomNavigationIndex = 0;
-  List screens = [];
+  List screens = [
+    OrderScreen(),
+    UnderconstructionScreen('Go Out'),
+    UnderconstructionScreen('Gold'),
+    UnderconstructionScreen('Explore'),
+    UnderconstructionScreen('Profile'),
+  ];
 
   void bottomNavigationTap(int index) {
     setState(() {
@@ -17,20 +24,10 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          CustomAppBar(),
-          Expanded(
-            child: Center(
-              child: Text('Welcome to home page'),
-            ),
-          ),
-        ],
-      ),
+      body: screens[bottomNavigationIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
