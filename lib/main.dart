@@ -9,7 +9,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: const Color(0xffcb202d),
+        accentColor: const Color(0xff2d2d2d),
+        fontFamily: 'Metropolis',
+      ),
       home: HomeScreen(),
     );
   }
 }
+// flutter build apk --split-per-abi

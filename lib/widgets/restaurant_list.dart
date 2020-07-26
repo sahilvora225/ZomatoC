@@ -10,7 +10,7 @@ class RestaurantList extends StatelessWidget {
 
   List<Widget> getRestaurantsList() {
     List<Widget> restaurantsList = [];
-    for(int i = 0; i < restaurants.length; i++) {
+    for (int i = 0; i < restaurants.length; i++) {
       if (i == 3) {
         restaurantsList.add(LatestOffers());
       }
@@ -30,9 +30,23 @@ class RestaurantList extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('${restaurants.length} places delivering to you'),
-          Text('Everything in the list - go nuts!'),
-          SizedBox(height: 20,),
+          Text(
+            '${restaurants.length} places delivering to you',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 5,),
+          Text(
+            'Everything in the list - go nuts!',
+            style: TextStyle(
+              color: Colors.grey,
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
           Column(
             children: [...getRestaurantsList()],
           ),

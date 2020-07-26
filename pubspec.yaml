@@ -71,6 +71,8 @@ flutter:
     - family: Metropolis
       fonts:
         - asset: assets/fonts/Metropolis-Regular.otf
+        - asset: assets/fonts/Metropolis-Medium.otf
+          weight: 400
         - asset: assets/fonts/Metropolis-Bold.otf
           weight: 700
   #   - family: Trajan Pro

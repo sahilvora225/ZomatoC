@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/custom_app_bar.dart';
-import '../widgets/latest_offers.dart';
 import '../widgets/order_again.dart';
 import '../widgets/restaurant_list.dart';
-import '../widgets/top_brands.dart';
 
 class OrderScreen extends StatefulWidget {
   @override
@@ -23,8 +21,6 @@ class _OrderScreenState extends State<OrderScreen> {
             child: Column(
               children: <Widget>[
                 OrderAgain(),
-                LatestOffers(),
-                TopBrands(),
                 RestaurantList(),
               ],
             ),

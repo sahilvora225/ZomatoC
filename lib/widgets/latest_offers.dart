@@ -8,7 +8,13 @@ class LatestOffers extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('LATEST OFFERS'),
+          Text(
+            'Latest Offers',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           SizedBox(
             height: 10,
           ),
@@ -29,8 +35,22 @@ class LatestOffers extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text('ALL'),
-                    Text('OFFERS'),
+                    Text(
+                      'ALL',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 30,
+                      ),
+                    ),
+                    Text(
+                      'OFFERS',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 22,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -48,9 +68,30 @@ class LatestOffers extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text('min'),
-                    Text('40%'),
-                    Text('OFF'),
+                    Text(
+                      'min',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 18,
+                      ),
+                    ),
+                    Text(
+                      '40%',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 30,
+                      ),
+                    ),
+                    Text(
+                      'OFF',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 22,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -68,9 +109,30 @@ class LatestOffers extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text('min'),
-                    Text('20%'),
-                    Text('OFF'),
+                    Text(
+                      'min',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 18,
+                      ),
+                    ),
+                    Text(
+                      '20%',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 30,
+                      ),
+                    ),
+                    Text(
+                      'OFF',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 22,
+                      ),
+                    ),
                   ],
                 ),
               ),

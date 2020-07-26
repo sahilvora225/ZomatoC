@@ -10,7 +10,13 @@ class TopBrands extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('TOP BRANDS'),
+          Text(
+            'Top Brands',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           SizedBox(
             height: 20,
           ),
@@ -20,7 +26,7 @@ class TopBrands extends StatelessWidget {
             child: Row(
               children: Restaurants.getTopBrands()
                   .map((e) => Container(
-                        height: 150,
+                        height: 165,
                         width: 150,
                         child: Column(
                           children: <Widget>[
@@ -34,7 +40,19 @@ class TopBrands extends StatelessWidget {
                             Text(
                               e.name,
                               overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                              ),
                             ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              '${e.distInMins.toString()} mins',
+                              style: TextStyle(
+                                color: Colors.grey,
+                              ),
+                            )
                           ],
                         ),
                       ))

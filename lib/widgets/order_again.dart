@@ -24,19 +24,23 @@ class OrderAgain extends StatelessWidget {
             width: 5,
           ),
           Container(
-            width: 100,
+            width: 150,
             height: 70,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Text(
                   restaurant.name,
                   softWrap: true,
                   overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-                Text('${restaurant.offer}% OFF'),
-                Text('${restaurant.distInMins} mins')
+                Text('${restaurant.offer}% OFF', style: TextStyle(color: Colors.blue),),
+                Text('${restaurant.distInMins} mins', style: TextStyle(color: Colors.grey),)
               ],
             ),
           ),
@@ -71,7 +75,22 @@ class OrderAgain extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('Order Again'),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                'Order Again',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                'see all',
+                style: TextStyle(color: Theme.of(context).primaryColor),
+              ),
+            ],
+          ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             physics: BouncingScrollPhysics(),

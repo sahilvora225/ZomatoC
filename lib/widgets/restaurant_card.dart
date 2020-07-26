@@ -7,16 +7,25 @@ class RestaurantCard extends StatelessWidget {
 
   RestaurantCard(this.restaurant);
 
-  List<Widget> getStars(double rating) {
+  List<Widget> getStars(double rating, BuildContext context) {
     List<Widget> stars = [];
     for (int i = 0; i < (rating / 1).floor(); i++) {
-      stars.add(Icon(Icons.star));
+      stars.add(Icon(
+        Icons.star,
+        color: Theme.of(context).primaryColor,
+      ));
     }
     if (rating % 1 != 0 && stars.length < 5) {
-      stars.add(Icon(Icons.star_half));
+      stars.add(Icon(
+        Icons.star_half,
+        color: Theme.of(context).primaryColor,
+      ));
     }
     for (int i = 0; stars.length < 5; i++) {
-      stars.add(Icon(Icons.star_border));
+      stars.add(Icon(
+        Icons.star_border,
+        color: Theme.of(context).primaryColor,
+      ));
     }
     return stars;
   }
@@ -46,31 +55,55 @@ class RestaurantCard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: Text(
                 restaurant.name,
                 overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
-            Row(
-              children: <Widget>[
-                ...getStars(restaurant.rating),
-                SizedBox(width: 5),
-                Text(restaurant.rating.toString()),
-                SizedBox(width: 5),
-                Text('(${restaurant.totalReviews} Delivery Reviews)'),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(left: 8, right: 8),
+              child: Row(
+                children: <Widget>[
+                  ...getStars(restaurant.rating, context),
+                  SizedBox(width: 5),
+                  Text(
+                    restaurant.rating.toString(),
+                    style: TextStyle(fontWeight: FontWeight.w700),
+                  ),
+                  SizedBox(width: 5),
+                  Text(
+                    '(${restaurant.totalReviews} Delivery Reviews)',
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 restaurant.tags.join(', '),
                 overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(bottom: 8, left: 8, right: 8,),
-              child: Text('₹${restaurant.costPerPerson} per person | ${restaurant.distInMins} mins'),
+              padding: EdgeInsets.only(
+                bottom: 8,
+                left: 8,
+                right: 8,
+              ),
+              child: Text(
+                '₹${restaurant.costPerPerson} per person | ${restaurant.distInMins} mins',
+                style: TextStyle(color: Colors.grey),
+              ),
             ),
             Container(
               padding: EdgeInsets.all(5),
@@ -78,6 +111,9 @@ class RestaurantCard extends StatelessWidget {
               child: Row(
                 children: <Widget>[
                   Icon(Icons.security),
+                  SizedBox(
+                    width: 5,
+                  ),
                   Text('Safety measures followed here'),
                 ],
               ),

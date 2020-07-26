@@ -12,6 +12,18 @@ class UnderconstructionScreen extends StatelessWidget {
         AppBar(
           title: Text('ZomatoC'),
           centerTitle: true,
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Colors.white,
+                  Colors.red,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+          ),
         ),
         Expanded(
           child: Column(

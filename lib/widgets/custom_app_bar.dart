@@ -30,10 +30,11 @@ class CustomAppBar extends StatelessWidget {
                       'Other',
                       style: TextStyle(
                         fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
-                      'Chikuwadi',
+                      'Chikuwadi, Borivali (West)',
                       style: TextStyle(
                         fontSize: 12,
                       ),
